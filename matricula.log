@@ -1,0 +1,10 @@
+yacc.py: There was a problem loading the table file: KeyError('p_matricula')
+main.py: Illegal character '0' at line 1
+main.py: Illegal character '0' at line 1
+main.py: Illegal character '1' at line 1
+main.py: Syntax error at 'matricular', line 1
+main.py: Illegal character '0' at line 1
+main.py: Illegal character '0' at line 1
+main.py: Illegal character '1' at line 1
+main.py: Syntax error at 'listar', line 1
+main.py: Syntax error at 'marcos', line 1
