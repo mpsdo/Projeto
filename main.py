@@ -14,15 +14,19 @@ t_NAME = r'[a-zA-Z_][a-zA-Z0-9_]*'
 
 t_ignore = ' \t'
 
+
 def t_newline(t):
     r'\n+'
     t.lexer.lineno += len(t.value)
+
 
 def t_error(t):
     print(f"Illegal character '{t.value[0]}'")
     t.lexer.skip(1)
 
+
 lexer = lex.lex()
+
 
 # -----------------------------------------------------------------------------
 # Parser
@@ -36,6 +40,7 @@ def p_statement_matricular(p):
         else:
             print(f"Erro: Código {p[3]} já está em uso.")
 
+
 def p_statement_listar(p):
     'statement : COMMAND'
     if p[1] == 'listar':
@@ -45,6 +50,7 @@ def p_statement_listar(p):
                 print(f"{name} - {code}")
         else:
             print("Não há alunos matriculados no momento.")
+
 
 def p_statement_desmatricular(p):
     'statement : COMMAND NAME'
@@ -61,11 +67,13 @@ def p_statement_desmatricular(p):
         else:
             print(f"Erro: Aluno(a) {p[2]} não encontrado.")
 
+
 def p_error(p):
     if p:
         print(f"Syntax error at '{p.value}'")
     else:
         print("Syntax error at EOF")
+
 
 parser = yacc.yacc()
 
